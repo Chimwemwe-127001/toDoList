@@ -8,7 +8,7 @@
 Additional description about the project and its features.
 
 ## Live Demo
-> Click [here]() to view the project live demo.
+> Click [here](https://chimwemwe-127001.github.io/toDoList/) to view the project live demo.
 
 ## Built With
 
