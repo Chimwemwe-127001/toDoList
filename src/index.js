@@ -27,16 +27,6 @@ let lists = [{
 function render () {
   clearElement(listContainer)
   lists.forEach(list => {
-    // const listTemp = `
-    // <li>
-    //   <div class="li-content">
-    //       <input type="checkbox" class="checkbox">
-    //       <p contenteditable="true">${list.name}</p>
-    //   </div>
-    //   <i class="material-icons">more_vert</i>
-    // </li>
-    // `;
-    // listContainer.innerHTML += listTemp;
     const listElement = document.createElement('li');
     const divElement = document.createElement('div');
     const ptagElement = document.createElement('p');
