@@ -29,6 +29,14 @@ function clearElement(element) {
   }
 }
 
+lists.sort((a, b) => {
+  const keyA = a.id;
+  const keyB = b.id;
+  if (keyA < keyB) return -1;
+  if (keyA > keyB) return 1;
+  return 0;
+});
+
 function render() {
   clearElement(listContainer);
   lists.forEach((list) => {
