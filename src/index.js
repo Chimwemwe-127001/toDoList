@@ -1,40 +1,45 @@
-import _ from 'lodash';
 import './style.css';
 
-const listContainer = document.querySelector('.todolist-tasks-list')
+const listContainer = document.querySelector('.todolist-tasks-list');
 
-let lists = [{
+const lists = [{
   id: 1,
-  name: 'Code'
+  name: 'Code',
 }, {
   id: 3,
-  name: 'Play FiFa'
+  name: 'Play FiFa',
 }, {
   id: 2,
-  name: 'Eat'
+  name: 'Eat',
 }, {
   id: 5,
-  name: 'Gaming'
+  name: 'Gaming',
 }, {
   id: 4,
-  name: 'Call Someone\'s daughter '
+  name: 'Call Someone\'s daughter ',
 }, {
   id: 6,
-  name: 'Talk to family'
-}
-]
+  name: 'Talk to family',
+},
+];
 
-function render () {
-  clearElement(listContainer)
-  lists.forEach(list => {
+function clearElement(element) {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
+function render() {
+  clearElement(listContainer);
+  lists.forEach((list) => {
     const listElement = document.createElement('li');
     const divElement = document.createElement('div');
     const ptagElement = document.createElement('p');
     const checkboxElement = document.createElement('input');
     const iconElement = document.createElement('i');
     listElement.dataset.listId = list.id;
-    divElement.classList.add("li-content");
-    checkboxElement.classList.add("checkbox");
+    divElement.classList.add('li-content');
+    checkboxElement.classList.add('checkbox');
     iconElement.classList.add('material-icons');
     checkboxElement.type = 'checkbox';
     ptagElement.contentEditable = 'true';
@@ -45,13 +50,7 @@ function render () {
     listElement.appendChild(iconElement);
     divElement.appendChild(checkboxElement);
     divElement.appendChild(ptagElement);
-  })
+  });
 }
 
-function clearElement (element) {
-  while(element.firstChild) {
-    element.removeChild(element.firstChild)
-  }
-}
-
-render()
+render();

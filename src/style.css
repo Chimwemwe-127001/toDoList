@@ -15,6 +15,12 @@ body {
   display: flex;
 }
 
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 * ul li {
   list-style: none;
 }
@@ -26,13 +32,12 @@ i {
 }
 
 i:hover {
-  transform: scale(1.2); 
+  transform: scale(1.2);
 }
 
 i:first-of-type:hover {
   transform: rotate(360deg);
   -webkit-transition-duration: 1s;
-  -webkit-transition-delay: now;
   -webkit-animation-timing-function: linear;
 }
 
@@ -41,8 +46,8 @@ i:first-of-type:hover {
   width: 90%;
   max-width: 40rem;
   box-shadow:
-  0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),
-  -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);
+    0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),
+    -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);
 }
 
 .todolist-title {
@@ -60,12 +65,6 @@ i:first-of-type:hover {
 ul {
   padding: 0 !important;
   margin: 0;
-}
-
-li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 li .li-content {
@@ -127,7 +126,7 @@ input::placeholder {
 
 .clearBtn a {
   text-decoration: none;
-  color: rgb(184, 184, 184);;
+  color: rgb(184, 184, 184);
   font-weight: 400;
   padding: 0.7rem;
 }
