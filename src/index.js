@@ -3,23 +3,29 @@ import './style.css';
 const listContainer = document.querySelector('.todolist-tasks-list');
 
 const lists = [{
-  id: 1,
-  name: 'Code',
+  index: 1,
+  completed: [true, false],
+  description: 'Code',
 }, {
-  id: 3,
-  name: 'Play FiFa',
+  index: 3,
+  completed: [true, false],
+  description: 'Play FiFa',
 }, {
-  id: 2,
-  name: 'Eat',
+  index: 2,
+  completed: [true, false],
+  description: 'Eat',
 }, {
-  id: 5,
-  name: 'Gaming',
+  index: 5,
+  completed: [true, false],
+  description: 'Gaming',
 }, {
-  id: 4,
-  name: 'Call Someone\'s daughter ',
+  index: 4,
+  completed: [true, false],
+  description: 'Call Someone\'s daughter ',
 }, {
-  id: 6,
-  name: 'Talk to family',
+  index: 6,
+  completed: [true, false],
+  description: 'Talk to family',
 },
 ];
 
@@ -30,8 +36,8 @@ function clearElement(element) {
 }
 
 lists.sort((a, b) => {
-  const keyA = a.id;
-  const keyB = b.id;
+  const keyA = a.index;
+  const keyB = b.index;
   if (keyA < keyB) return -1;
   if (keyA > keyB) return 1;
   return 0;
@@ -51,7 +57,7 @@ function render() {
     iconElement.classList.add('material-icons');
     checkboxElement.type = 'checkbox';
     ptagElement.contentEditable = 'true';
-    ptagElement.innerText = list.name;
+    ptagElement.innerText = list.description;
     iconElement.innerText = 'more_vert';
     listContainer.appendChild(listElement);
     listElement.appendChild(divElement);
