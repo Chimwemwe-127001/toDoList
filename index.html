@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<script defer src="/toDoList/main.js"></script></head>
+<body>
+    <div class="todolist-container">
+        <div class="todolist-title d-flex">
+            <h1>Today's To Do</h1>
+            <i class="material-icons rotate">autorenew</i>
+        </div>
+        <form class="form d-flex">
+            <input type="text" name="add_item" id="add_item" class="add_item" placeholder="Add to your list...">
+            <i class="material-icons">keyboard_return</i>
+        </form>
+        <ul class="todolist-tasks-list"> </ul>
+        <div class="clearBtn d-flex">
+            <a href="#">Clear all completed</a>
+        </div>
+    </div>
+</body>
+</html>
