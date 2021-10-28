@@ -1,7 +1,99 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ([
-/* 0 */,
+/* 0 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ List)
+/* harmony export */ });
+/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
+/* harmony import */ var _interact_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(11);
+/* eslint-disable import/no-cycle */
+
+
+
+const listContainer = document.querySelector('.todolist-tasks-list');
+class List {
+  constructor() {
+    this.lists = [{
+      index: 1,
+      completed: [true, false],
+      description: 'Code',
+    }, {
+      index: 3,
+      completed: [true, false],
+      description: 'Play FiFa',
+    }, {
+      index: 2,
+      completed: [true, false],
+      description: 'Eat',
+    }, {
+      index: 5,
+      completed: [true, false],
+      description: 'Gaming',
+    }, {
+      index: 4,
+      completed: [true, false],
+      description: 'Call Someone\'s daughter ',
+    }, {
+      index: 6,
+      completed: [true, false],
+      description: 'Talk to family',
+    },
+    ];
+  }
+}
+
+const lists = new List();
+
+function clearElement(element) {
+  while (element.firstChild) {
+    element.removeChild(element.firstChild);
+  }
+}
+
+lists.lists.sort((a, b) => {
+  const keyA = a.index;
+  const keyB = b.index;
+  if (keyA < keyB) return -1;
+  if (keyA > keyB) return 1;
+  return 0;
+});
+
+function render() {
+  clearElement(listContainer);
+  lists.lists.forEach((list) => {
+    const listElement = document.createElement('li');
+    const divElement = document.createElement('div');
+    const ptagElement = document.createElement('p');
+    const checkboxElement = document.createElement('input');
+    const iconElement = document.createElement('i');
+    listElement.dataset.listId = list.index;
+    divElement.classList.add('li-content');
+    checkboxElement.classList.add('checkbox');
+    iconElement.classList.add('material-icons');
+    iconElement.classList.add('move');
+    listElement.draggable = 'true';
+    checkboxElement.type = 'checkbox';
+    ptagElement.classList.add('ptag');
+    ptagElement.contentEditable = 'true';
+    ptagElement.innerText = list.description;
+    iconElement.innerText = 'more_vert';
+    listContainer.appendChild(listElement);
+    listElement.appendChild(divElement);
+    listElement.appendChild(iconElement);
+    divElement.appendChild(checkboxElement);
+    divElement.appendChild(ptagElement);
+  });
+}
+
+render();
+(0,_interact_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+
+
+/***/ }),
 /* 1 */
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -350,7 +442,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: rgba(235, 235, 235, 0.692);\r\n  margin: 0;\r\n  flex-direction: column;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n* ul li {\r\n  list-style: none;\r\n}\r\n\r\ni {\r\n  color: rgb(184, 184, 184);\r\n  cursor: pointer;\r\n  transition: all 0.2s;\r\n}\r\n\r\ni:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\ni:first-of-type:hover {\r\n  transform: rotate(360deg);\r\n  -webkit-transition-duration: 1s;\r\n  -webkit-animation-timing-function: linear;\r\n}\r\n\r\n.todolist-container {\r\n  font-size: 1.4em;\r\n  width: 90%;\r\n  max-width: 40rem;\r\n  box-shadow:\r\n    0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),\r\n    -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);\r\n}\r\n\r\n.todolist-title {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.todolist-container > *,\r\n.todolist-tasks-list li {\r\n  padding: 1.2rem 4%;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  background-color: #fff;\r\n}\r\n\r\nul {\r\n  padding: 0 !important;\r\n  margin: 0;\r\n}\r\n\r\nli .li-content {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\nli .li-content > * {\r\n  padding: 0 20px;\r\n}\r\n\r\n.li-content .checkbox {\r\n  height: 15px;\r\n  width: 15px;\r\n  transition: all 0.2s;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\nh1 {\r\n  font-size: 1.3em;\r\n  margin: 0;\r\n  font-weight: 600;\r\n}\r\n\r\np {\r\n  margin: 0;\r\n}\r\n\r\n.form {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.form input {\r\n  background: transparent;\r\n  border: none;\r\n  font-size: 1.1em;\r\n  font-style: italic;\r\n  color: rgb(117, 117, 117);\r\n  width: 100%;\r\n}\r\n\r\ninput::placeholder {\r\n  color: rgb(193, 193, 193);\r\n}\r\n\r\n:is(input, p):focus {\r\n  outline: none !important;\r\n}\r\n\r\n.clearBtn {\r\n  justify-content: center;\r\n  background-color: rgba(239, 238, 238, 0.612);\r\n}\r\n\r\n.clearBtn a {\r\n  text-decoration: none;\r\n  color: rgb(184, 184, 184);\r\n  font-weight: 400;\r\n  padding: 0.7rem;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: rgba(235, 235, 235, 0.692);\r\n  margin: 0;\r\n  flex-direction: column;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n* ul li {\r\n  list-style: none;\r\n}\r\n\r\ni {\r\n  color: rgb(184, 184, 184);\r\n  cursor: pointer;\r\n  transition: all 0.2s;\r\n}\r\n\r\ni:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\ni:first-of-type:hover {\r\n  transform: rotate(360deg);\r\n  -webkit-transition-duration: 1s;\r\n  -webkit-animation-timing-function: linear;\r\n}\r\n\r\n.todolist-container {\r\n  font-size: 1.4em;\r\n  width: 90%;\r\n  max-width: 40rem;\r\n  box-shadow:\r\n    0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),\r\n    -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);\r\n}\r\n\r\n.todolist-title {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.move {\r\n  cursor: move !important;\r\n}\r\n\r\n.todolist-container > *,\r\n.todolist-tasks-list li {\r\n  padding: 1.2rem 4%;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  background-color: #fff;\r\n}\r\n\r\nul {\r\n  padding: 0 !important;\r\n  margin: 0;\r\n}\r\n\r\nli .li-content {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\nli .li-content > * {\r\n  padding: 0 20px;\r\n}\r\n\r\n.li-content .checkbox {\r\n  height: 15px;\r\n  width: 15px;\r\n  transition: all 0.2s;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\nh1 {\r\n  font-size: 1.3em;\r\n  margin: 0;\r\n  font-weight: 600;\r\n}\r\n\r\np {\r\n  margin: 0;\r\n  transition: all ease-out 3000ms;\r\n}\r\n\r\n.form {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.form input {\r\n  background: transparent;\r\n  border: none;\r\n  font-size: 1.1em;\r\n  font-style: italic;\r\n  color: rgb(117, 117, 117);\r\n  width: 100%;\r\n}\r\n\r\ninput::placeholder {\r\n  color: rgb(193, 193, 193);\r\n}\r\n\r\n:is(input, p):focus {\r\n  outline: none !important;\r\n}\r\n\r\ninput[class=checkbox]:checked ~ p.strikethrough {\r\n  text-decoration: line-through;\r\n  color: rgb(135, 135, 135);\r\n  font-style: italic;\r\n  opacity: 0.6;\r\n  font-weight: 400;\r\n}\r\n\r\n.clearBtn {\r\n  justify-content: center;\r\n  background-color: rgba(239, 238, 238, 0.612);\r\n}\r\n\r\n.clearBtn a {\r\n  text-decoration: none;\r\n  color: rgb(184, 184, 184);\r\n  font-weight: 400;\r\n  padding: 0.7rem;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -472,6 +564,34 @@ module.exports = function (cssWithMappingToString) {
   return list;
 };
 
+/***/ }),
+/* 11 */
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ run)
+/* harmony export */ });
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0);
+
+
+function removeStrikeThrough() {
+  _index_js__WEBPACK_IMPORTED_MODULE_0__["default"].lists.forEach(() => {
+    const ptagElements = document.querySelectorAll('.ptag');
+    const checkbox = document.querySelector('.checkbox');
+    if (checkbox.checked) {
+      ptagElements.forEach((ptagElement) => {
+        ptagElement.classList.add('strikethrough');
+      });
+    }
+  });
+}
+
+function run() {
+  const checkbox = document.querySelector('.checkbox');
+  checkbox.addEventListener('change', removeStrikeThrough);
+}
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -541,82 +661,11 @@ module.exports = function (cssWithMappingToString) {
 /******/ 	})();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
-(() => {
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
-
-
-const listContainer = document.querySelector('.todolist-tasks-list');
-
-const lists = [{
-  index: 1,
-  completed: [true, false],
-  description: 'Code',
-}, {
-  index: 3,
-  completed: [true, false],
-  description: 'Play FiFa',
-}, {
-  index: 2,
-  completed: [true, false],
-  description: 'Eat',
-}, {
-  index: 5,
-  completed: [true, false],
-  description: 'Gaming',
-}, {
-  index: 4,
-  completed: [true, false],
-  description: 'Call Someone\'s daughter ',
-}, {
-  index: 6,
-  completed: [true, false],
-  description: 'Talk to family',
-},
-];
-
-function clearElement(element) {
-  while (element.firstChild) {
-    element.removeChild(element.firstChild);
-  }
-}
-
-lists.sort((a, b) => {
-  const keyA = a.index;
-  const keyB = b.index;
-  if (keyA < keyB) return -1;
-  if (keyA > keyB) return 1;
-  return 0;
-});
-
-function render() {
-  clearElement(listContainer);
-  lists.forEach((list) => {
-    const listElement = document.createElement('li');
-    const divElement = document.createElement('div');
-    const ptagElement = document.createElement('p');
-    const checkboxElement = document.createElement('input');
-    const iconElement = document.createElement('i');
-    listElement.dataset.listId = list.id;
-    divElement.classList.add('li-content');
-    checkboxElement.classList.add('checkbox');
-    iconElement.classList.add('material-icons');
-    checkboxElement.type = 'checkbox';
-    ptagElement.contentEditable = 'true';
-    ptagElement.innerText = list.description;
-    iconElement.innerText = 'more_vert';
-    listContainer.appendChild(listElement);
-    listElement.appendChild(divElement);
-    listElement.appendChild(iconElement);
-    divElement.appendChild(checkboxElement);
-    divElement.appendChild(ptagElement);
-  });
-}
-
-render();
-})();
-
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module is referenced by other modules so it can't be inlined
+/******/ 	var __webpack_exports__ = __webpack_require__(0);
+/******/ 	
 /******/ })()
 ;
