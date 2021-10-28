@@ -35,7 +35,7 @@ i:hover {
   transform: scale(1.2);
 }
 
-i:first-of-type:hover {
+.rotate:hover {
   transform: rotate(360deg);
   -webkit-transition-duration: 1s;
   -webkit-animation-timing-function: linear;
@@ -53,6 +53,10 @@ i:first-of-type:hover {
 .todolist-title {
   justify-content: space-between;
   align-items: center;
+}
+
+.move {
+  cursor: move !important;
 }
 
 .todolist-container > *,
@@ -95,6 +99,7 @@ h1 {
 
 p {
   margin: 0;
+  transition: all ease-out 3000ms;
 }
 
 .form {
@@ -117,6 +122,14 @@ input::placeholder {
 
 :is(input, p):focus {
   outline: none !important;
+}
+
+p.strikethrough {
+  text-decoration: line-through;
+  color: rgb(135, 135, 135);
+  font-style: italic;
+  opacity: 0.6;
+  font-weight: 400;
 }
 
 .clearBtn {

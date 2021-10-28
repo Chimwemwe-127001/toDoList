@@ -31,6 +31,14 @@ Additional description about the project and its features.
 
   ```npm install```
 
+> build project
+
+  ```npm run build```
+
+> start project
+
+  ```npm start```
+
 ## Authors
 
 👤 **Chimwemwe Sinyinza**
