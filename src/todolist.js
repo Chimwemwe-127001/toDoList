@@ -23,7 +23,7 @@ export default class List {
           description: 'Gaming',
         }, {
           index: 4,
-          completed: false,
+          completed: true,
           description: 'Call Someone\'s daughter ',
         }, {
           index: 6,
@@ -83,6 +83,16 @@ export default class List {
     }
   }
 
+  sort() {
+    this.list.sort((a, b) => {
+      const keyA = a.index;
+      const keyB = b.index;
+      if (keyA < keyB) return -1;
+      if (keyA > keyB) return 1;
+      return 0;
+    });
+  }
+
   saveActivities() {
     // update indexes and sort
     this.list.forEach((task, index) => {
@@ -93,14 +103,10 @@ export default class List {
     localStorage.setItem('todo-list', currentList);
   }
 
-  sort() {
-    this.list.sort((a, b) => {
-      const keyA = a.index;
-      const keyB = b.index;
-      if (keyA < keyB) return -1;
-      if (keyA > keyB) return 1;
-      return 0;
-    });
+  editActivity(index, newDescription) {
+    this.list[index].description = newDescription;
+    this.saveActivities();
+    return this.list;
   }
 
   clearCompleted() {

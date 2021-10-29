@@ -350,7 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: rgba(235, 235, 235, 0.692);\r\n  margin: 0;\r\n  flex-direction: column;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n* ul li {\r\n  list-style: none;\r\n}\r\n\r\ni {\r\n  color: rgb(184, 184, 184);\r\n  cursor: pointer;\r\n  transition: all 0.2s;\r\n}\r\n\r\ni:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\n.rotate:hover {\r\n  transform: rotate(360deg);\r\n  -webkit-transition-duration: 1s;\r\n  -webkit-animation-timing-function: linear;\r\n}\r\n\r\n.todolist-container {\r\n  font-size: 1.4em;\r\n  width: 90%;\r\n  max-width: 40rem;\r\n  box-shadow:\r\n    0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),\r\n    -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);\r\n}\r\n\r\n.todolist-title {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.move {\r\n  cursor: move !important;\r\n}\r\n\r\n.todolist-container > *,\r\n.todolist-tasks-list li {\r\n  padding: 1.2rem 4%;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  background-color: #fff;\r\n}\r\n\r\nul {\r\n  padding: 0 !important;\r\n  margin: 0;\r\n}\r\n\r\nli .li-content {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\nli .li-content > * {\r\n  padding: 0 20px;\r\n}\r\n\r\n.li-content .checkbox {\r\n  height: 15px;\r\n  width: 15px;\r\n  transition: all 0.2s;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\nh1 {\r\n  font-size: 1.3em;\r\n  margin: 0;\r\n  font-weight: 600;\r\n}\r\n\r\np {\r\n  margin: 0;\r\n  transition: all ease-out 3000ms;\r\n}\r\n\r\n.form {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.form input {\r\n  background: transparent;\r\n  border: none;\r\n  font-size: 1.1em;\r\n  font-style: italic;\r\n  color: rgb(117, 117, 117);\r\n  width: 100%;\r\n}\r\n\r\ninput::placeholder {\r\n  color: rgb(193, 193, 193);\r\n}\r\n\r\n:is(input, p):focus {\r\n  outline: none !important;\r\n}\r\n\r\np.strikethrough {\r\n  text-decoration: line-through;\r\n  color: rgb(135, 135, 135);\r\n  font-style: italic;\r\n  opacity: 0.6;\r\n  font-weight: 400;\r\n}\r\n\r\n.clearBtn {\r\n  justify-content: center;\r\n  background-color: rgba(239, 238, 238, 0.612);\r\n}\r\n\r\n.clearBtn a {\r\n  text-decoration: none;\r\n  color: rgb(184, 184, 184);\r\n  font-weight: 400;\r\n  padding: 0.7rem;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: rgba(235, 235, 235, 0.692);\r\n  margin: 0;\r\n  flex-direction: column;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n* ul li {\r\n  list-style: none;\r\n}\r\n\r\ni {\r\n  color: rgb(184, 184, 184);\r\n  cursor: pointer;\r\n  transition: all 0.2s;\r\n}\r\n\r\ni:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\n.rotate:hover {\r\n  transform: rotate(360deg);\r\n  -webkit-transition-duration: 1s;\r\n  -webkit-animation-timing-function: linear;\r\n}\r\n\r\n.todolist-container {\r\n  font-size: 1.4em;\r\n  width: 90%;\r\n  min-width: 40rem;\r\n  box-shadow:\r\n    0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),\r\n    -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);\r\n}\r\n\r\n.todolist-title {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.move {\r\n  cursor: pointer !important;\r\n}\r\n\r\n.todolist-container > *,\r\n.todolist-tasks-list li {\r\n  padding: 1.2rem 4%;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  background-color: #fff;\r\n}\r\n\r\nul {\r\n  padding: 0 !important;\r\n  margin: 0;\r\n}\r\n\r\nli .li-content {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\nli .li-content > * {\r\n  padding: 0 20px;\r\n}\r\n\r\n.li-content .checkbox {\r\n  height: 15px;\r\n  width: 15px;\r\n  transition: all 0.2s;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\n#add {\r\n  background: #fff;\r\n  color: #ddd;\r\n  border: 0 solid transparent;\r\n  transition: 0.6s;\r\n}\r\n\r\n#add:hover {\r\n  color: #000;\r\n  cursor: pointer;\r\n}\r\n\r\nh1 {\r\n  font-size: 1.3em;\r\n  margin: 0;\r\n  font-weight: 600;\r\n}\r\n\r\np {\r\n  margin: 0;\r\n  transition: all ease-out 3000ms;\r\n}\r\n\r\n.form {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.form input {\r\n  background: transparent;\r\n  border: none;\r\n  font-size: 1.1em;\r\n  font-style: italic;\r\n  color: rgb(117, 117, 117);\r\n  width: 100%;\r\n}\r\n\r\ninput::placeholder {\r\n  color: rgb(193, 193, 193);\r\n}\r\n\r\n:is(input, p):focus {\r\n  outline: none !important;\r\n}\r\n\r\np.strikethrough {\r\n  text-decoration: line-through;\r\n  color: rgb(135, 135, 135);\r\n  font-style: italic;\r\n  opacity: 0.6;\r\n  font-weight: 400;\r\n}\r\n\r\n.clearBtn {\r\n  justify-content: center;\r\n  background-color: rgba(239, 238, 238, 0.612);\r\n}\r\n\r\n.clearBtn a {\r\n  text-decoration: none;\r\n  color: rgb(184, 184, 184);\r\n  font-weight: 400;\r\n  padding: 0.7rem;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -505,7 +505,7 @@ class List {
           description: 'Gaming',
         }, {
           index: 4,
-          completed: false,
+          completed: true,
           description: 'Call Someone\'s daughter ',
         }, {
           index: 6,
@@ -565,6 +565,16 @@ class List {
     }
   }
 
+  sort() {
+    this.list.sort((a, b) => {
+      const keyA = a.index;
+      const keyB = b.index;
+      if (keyA < keyB) return -1;
+      if (keyA > keyB) return 1;
+      return 0;
+    });
+  }
+
   saveActivities() {
     // update indexes and sort
     this.list.forEach((task, index) => {
@@ -575,14 +585,10 @@ class List {
     localStorage.setItem('todo-list', currentList);
   }
 
-  sort() {
-    this.list.sort((a, b) => {
-      const keyA = a.index;
-      const keyB = b.index;
-      if (keyA < keyB) return -1;
-      if (keyA > keyB) return 1;
-      return 0;
-    });
+  editActivity(index, newDescription) {
+    this.list[index].description = newDescription;
+    this.saveActivities();
+    return this.list;
   }
 
   clearCompleted() {
@@ -700,6 +706,37 @@ todolist.updateDOM();
 document.querySelector('.clearBtn a').addEventListener('click', (e) => {
   e.preventDefault();
   todolist.clearCompleted();
+});
+
+document.getElementById('clearAll').addEventListener('click', () => {
+  todolist.list.splice(0);
+  todolist.saveActivities();
+  todolist.updateDOM();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.querySelector('form');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const newActivity = form.elements.new_task.value;
+    todolist.addTask(newActivity);
+    form.reset();
+  });
+
+  document.querySelectorAll('.remove').forEach((removeBtn) => {
+    removeBtn.addEventListener('click', (e) => {
+      const toRemove = e.target.getAttribute('id');
+      todolist.removeTask(toRemove);
+    });
+  });
+
+  Array.from(document.querySelectorAll('[contenteditable]')).forEach((ptag) => {
+    ptag.addEventListener('input', (e) => {
+      const newDescription = e.target.innerText;
+      const index = e.target.getAttribute('id');
+      todolist.editActivity(index, newDescription);
+    });
+  });
 });
 
 })();
