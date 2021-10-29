@@ -46,11 +46,11 @@ export default class List {
       if (task.completed === true) {
         listElem += `
             <input class="checkbox" type="checkbox" index="${task.index}" checked>
-            <p class="ptag strikethrough" contenteditable="true" id="pid${task.index}">${task.description}</p>`;
+            <p class="ptag strikethrough" contenteditable="true" index="${task.index}" id="pid${task.index}">${task.description}</p>`;
       } else {
         listElem += `
             <input class="checkbox" type="checkbox" index="${task.index}">
-            <p class="ptag" contenteditable="true" id="pid${task.index}">${task.description}</p>`;
+            <p class="ptag" contenteditable="true" index="${task.index}" id="pid${task.index}">${task.description}</p>`;
       }
       listElem += `
         </div>

@@ -528,11 +528,11 @@ class List {
       if (task.completed === true) {
         listElem += `
             <input class="checkbox" type="checkbox" index="${task.index}" checked>
-            <p class="ptag strikethrough" contenteditable="true" id="pid${task.index}">${task.description}</p>`;
+            <p class="ptag strikethrough" contenteditable="true" index="${task.index}" id="pid${task.index}">${task.description}</p>`;
       } else {
         listElem += `
             <input class="checkbox" type="checkbox" index="${task.index}">
-            <p class="ptag" contenteditable="true" id="pid${task.index}">${task.description}</p>`;
+            <p class="ptag" contenteditable="true" index="${task.index}" id="pid${task.index}">${task.description}</p>`;
       }
       listElem += `
         </div>
@@ -730,11 +730,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  Array.from(document.querySelectorAll('[contenteditable]')).forEach((ptag) => {
+  document.querySelectorAll('.ptag').forEach((ptag) => {
     ptag.addEventListener('input', (e) => {
-      const newDescription = e.target.innerText;
-      const index = e.target.getAttribute('id');
-      todolist.editActivity(index, newDescription);
+      // const alltext = document.querySelectorAll('.ptag');
+      // Array.from(alltext).forEach((text) => {
+      const index = ptag.getAttribute('index');
+      const savedData = JSON.parse(localStorage.getItem('todo-list'));
+      if (savedData[index] === savedData[index].index) {
+        savedData[index].description = e.target.innerText;
+      }
+      todolist.saveActivities();
+      console.log(savedData[index].description);
     });
   });
 });

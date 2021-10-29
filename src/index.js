@@ -32,11 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  Array.from(document.querySelectorAll('[contenteditable]')).forEach((ptag) => {
+  document.querySelectorAll('.ptag').forEach((ptag) => {
     ptag.addEventListener('input', (e) => {
-      const newDescription = e.target.innerText;
-      const index = e.target.getAttribute('id');
-      todolist.editActivity(index, newDescription);
+      // const alltext = document.querySelectorAll('.ptag');
+      // Array.from(alltext).forEach((text) => {
+      const index = ptag.getAttribute('index');
+      const savedData = JSON.parse(localStorage.getItem('todo-list'));
+      if (savedData[index] === savedData[index].index) {
+        savedData[index].description = e.target.innerText;
+      }
+      todolist.saveActivities();
+      console.log(savedData[index].description);
     });
   });
 });
