@@ -12,11 +12,11 @@
     <div class="todolist-container">
         <div class="todolist-title d-flex">
             <h1>Today's To Do</h1>
-            <i class="material-icons rotate">autorenew</i>
+            <i class="material-icons rotate" id="clearAll">autorenew</i>
         </div>
         <form class="form d-flex">
-            <input type="text" name="add_item" id="add_item" class="add_item" placeholder="Add to your list...">
-            <i class="material-icons">keyboard_return</i>
+            <input type="text" id="input" name="new_task" placeholder="Add to your list...">
+            <button class="material-icons" id="add" type="submit">keyboard_return</button>
         </form>
         <ul class="todolist-tasks-list"> </ul>
         <div class="clearBtn d-flex">
