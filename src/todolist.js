@@ -1,36 +1,11 @@
+/* eslint-disable no-plusplus */
 export default class List {
   constructor() {
     const savedActivities = JSON.parse(localStorage.getItem('todo-list'));
     if (savedActivities) {
       this.list = savedActivities;
     } else {
-      this.list = [
-        {
-          index: 1,
-          completed: false,
-          description: 'Code',
-        }, {
-          index: 3,
-          completed: true,
-          description: 'Play FiFa',
-        }, {
-          index: 2,
-          completed: false,
-          description: 'Eat',
-        }, {
-          index: 5,
-          completed: false,
-          description: 'Gaming',
-        }, {
-          index: 4,
-          completed: false,
-          description: 'Call Someone\'s daughter ',
-        }, {
-          index: 6,
-          completed: false,
-          description: 'Talk to family',
-        },
-      ];
+      this.list = [];
     }
   }
 
@@ -46,11 +21,11 @@ export default class List {
       if (task.completed === true) {
         listElem += `
             <input class="checkbox" type="checkbox" index="${task.index}" checked>
-            <p class="ptag strikethrough" contenteditable="true" id="pid${task.index}">${task.description}</p>`;
+            <p class="ptag strikethrough" contenteditable="true" index="${task.index}" id="pid${task.index}">${task.description}</p>`;
       } else {
         listElem += `
             <input class="checkbox" type="checkbox" index="${task.index}">
-            <p class="ptag" contenteditable="true" id="pid${task.index}">${task.description}</p>`;
+            <p class="ptag" contenteditable="true" index="${task.index}" id="pid${task.index}">${task.description}</p>`;
       }
       listElem += `
         </div>
@@ -83,16 +58,6 @@ export default class List {
     }
   }
 
-  saveActivities() {
-    // update indexes and sort
-    this.list.forEach((task, index) => {
-      this.list[index].index = index;
-    });
-    this.sort();
-    const currentList = JSON.stringify(this.list);
-    localStorage.setItem('todo-list', currentList);
-  }
-
   sort() {
     this.list.sort((a, b) => {
       const keyA = a.index;
@@ -101,6 +66,14 @@ export default class List {
       if (keyA > keyB) return 1;
       return 0;
     });
+  }
+
+  saveActivities() {
+    this.list.forEach((task, index) => {
+      this.list[index].index = index;
+    });
+    this.sort();
+    localStorage.setItem('todo-list', JSON.stringify(this.list));
   }
 
   clearCompleted() {
