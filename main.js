@@ -350,7 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  background: rgba(235, 235, 235, 0.692);\r\n  margin: 0;\r\n  flex-direction: column;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  height: 100vh;\r\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\r\n}\r\n\r\n.d-flex {\r\n  display: flex;\r\n}\r\n\r\nli {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n}\r\n\r\n* ul li {\r\n  list-style: none;\r\n}\r\n\r\ni {\r\n  color: rgb(184, 184, 184);\r\n  cursor: pointer;\r\n  transition: all 0.2s;\r\n}\r\n\r\ni:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\n.rotate:hover {\r\n  transform: rotate(360deg);\r\n  -webkit-transition-duration: 1s;\r\n  -webkit-animation-timing-function: linear;\r\n}\r\n\r\n.todolist-container {\r\n  font-size: 1.4em;\r\n  min-width: 50rem;\r\n  max-width: 90%;\r\n  box-shadow:\r\n    0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),\r\n    -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);\r\n}\r\n\r\n.todolist-title {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.move {\r\n  cursor: pointer !important;\r\n}\r\n\r\n.todolist-container > *,\r\n.todolist-tasks-list li {\r\n  padding: 1.2rem 4%;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  background-color: #fff;\r\n}\r\n\r\nul {\r\n  padding: 0 !important;\r\n  margin: 0;\r\n}\r\n\r\nli .li-content {\r\n  display: flex;\r\n  align-items: center;\r\n}\r\n\r\nli .li-content > * {\r\n  padding: 0 20px;\r\n}\r\n\r\n.li-content .checkbox {\r\n  height: 15px;\r\n  width: 15px;\r\n  transition: all 0.2s;\r\n  cursor: pointer;\r\n}\r\n\r\n.checkbox:hover {\r\n  transform: scale(1.2);\r\n}\r\n\r\n#add {\r\n  background: #fff;\r\n  color: #ddd;\r\n  border: 0 solid transparent;\r\n  transition: 0.6s;\r\n}\r\n\r\n#add:hover {\r\n  color: #000;\r\n  cursor: pointer;\r\n}\r\n\r\nh1 {\r\n  font-size: 1.3em;\r\n  margin: 0;\r\n  font-weight: 600;\r\n}\r\n\r\np {\r\n  margin: 0;\r\n  transition: all ease-out 3000ms;\r\n}\r\n\r\n.form {\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.form input {\r\n  background: transparent;\r\n  border: none;\r\n  font-size: 1.1em;\r\n  font-style: italic;\r\n  color: rgb(117, 117, 117);\r\n  width: 100%;\r\n}\r\n\r\ninput::placeholder {\r\n  color: rgb(193, 193, 193);\r\n}\r\n\r\n:is(input, p):focus {\r\n  outline: none !important;\r\n}\r\n\r\np.strikethrough {\r\n  text-decoration: line-through;\r\n  color: rgb(135, 135, 135);\r\n  font-style: italic;\r\n  opacity: 0.6;\r\n  font-weight: 400;\r\n}\r\n\r\n.clearBtn {\r\n  justify-content: center;\r\n  background-color: rgba(239, 238, 238, 0.612);\r\n}\r\n\r\n.clearBtn a {\r\n  text-decoration: none;\r\n  color: rgb(184, 184, 184);\r\n  font-weight: 400;\r\n  padding: 0.7rem;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background: rgba(235, 235, 235, 0.692);\n  margin: 0;\n  flex-direction: column;\n  padding: 0;\n  box-sizing: border-box;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100vh;\n  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;\n}\n\n.d-flex {\n  display: flex;\n}\n\nli {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n* ul li {\n  list-style: none;\n}\n\ni {\n  color: rgb(184, 184, 184);\n  cursor: pointer;\n  transition: all 0.2s;\n}\n\ni:hover {\n  transform: scale(1.2);\n}\n\n.rotate:hover {\n  transform: rotate(360deg);\n  -webkit-transition-duration: 1s;\n  -webkit-animation-timing-function: linear;\n}\n\n.todolist-container {\n  font-size: 1.4em;\n  min-width: 50rem;\n  max-width: 90%;\n  box-shadow:\n    0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.08),\n    -0.25rem -0.05rem 1rem 0 rgba(81, 80, 80, 0.08);\n}\n\n.todolist-title {\n  justify-content: space-between;\n  align-items: center;\n}\n\n.move {\n  cursor: pointer !important;\n}\n\n.todolist-container > *,\n.todolist-tasks-list li {\n  padding: 1.2rem 4%;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\n  background-color: #fff;\n}\n\nul {\n  padding: 0 !important;\n  margin: 0;\n}\n\nli .li-content {\n  display: flex;\n  align-items: center;\n}\n\nli .li-content > * {\n  padding: 0 20px;\n}\n\n.li-content .checkbox {\n  height: 15px;\n  width: 15px;\n  transition: all 0.2s;\n  cursor: pointer;\n}\n\n.checkbox:hover {\n  transform: scale(1.2);\n}\n\n#add {\n  background: #fff;\n  color: #ddd;\n  border: 0 solid transparent;\n  transition: 0.6s;\n}\n\n#add:hover {\n  color: #000;\n  cursor: pointer;\n}\n\nh1 {\n  font-size: 1.3em;\n  margin: 0;\n  font-weight: 600;\n}\n\np {\n  margin: 0;\n  transition: all ease-out 3000ms;\n}\n\n.form {\n  justify-content: space-between;\n  align-items: center;\n}\n\n.form input {\n  background: transparent;\n  border: none;\n  font-size: 1.1em;\n  font-style: italic;\n  color: rgb(117, 117, 117);\n  width: 100%;\n}\n\ninput::placeholder {\n  color: rgb(193, 193, 193);\n}\n\n:is(input, p):focus {\n  outline: none !important;\n}\n\np.strikethrough {\n  text-decoration: line-through;\n  color: rgb(135, 135, 135);\n  font-style: italic;\n  opacity: 0.6;\n  font-weight: 400;\n}\n\n.clearBtn {\n  justify-content: center;\n  background-color: rgba(239, 238, 238, 0.612);\n}\n\n.clearBtn a {\n  text-decoration: none;\n  color: rgb(184, 184, 184);\n  font-weight: 400;\n  padding: 0.7rem;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -511,7 +511,7 @@ class List {
       }
       listElem += `
         </div>
-        <i class="material-icons move">more_vert</i>
+        <i class="material-icons remove" id="${task.index}">delete_sweep</i>
       </li>`;
       domListSection.innerHTML += listElem;
     });
@@ -587,6 +587,7 @@ class List {
     });
   }
 }
+
 
 /***/ })
 /******/ 	]);
@@ -693,19 +694,20 @@ document.querySelectorAll('.ptag').forEach((ptag) => {
   });
 });
 
+document.querySelectorAll('.remove').forEach((removeBtn) => {
+  removeBtn.addEventListener('click', (e) => {
+    const toRemove = e.target.getAttribute('id');
+    todolist.removeTask(toRemove);
+  });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
     const newActivity = form.elements.new_task.value;
     todolist.addTask(newActivity);
     form.reset();
-  });
-
-  document.querySelectorAll('.remove').forEach((removeBtn) => {
-    removeBtn.addEventListener('click', (e) => {
-      const toRemove = e.target.getAttribute('id');
-      todolist.removeTask(toRemove);
-    });
   });
 });
 
