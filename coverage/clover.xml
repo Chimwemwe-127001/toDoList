@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1636017899617" clover="3.2.0">
-  <project timestamp="1636017899617" name="All files">
+<coverage generated="1636019984302" clover="3.2.0">
+  <project timestamp="1636019984303" name="All files">
     <metrics statements="54" coveredstatements="31" conditionals="16" coveredconditionals="5" methods="16" coveredmethods="11" elements="86" coveredelements="47" complexity="0" loc="54" ncloc="54" packages="1" files="1" classes="1"/>
-    <file name="todolist.js" path="/home/gh05t/GitHub_Repos/toDoList/src/todolist.js">
+    <file name="todolist.js" path="C:\Users\Admin\Desktop\New folder\toDoList\src\todolist.js">
       <metrics statements="54" coveredstatements="31" conditionals="16" coveredconditionals="5" methods="16" coveredmethods="11"/>
       <line num="4" count="2" type="stmt"/>
       <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>

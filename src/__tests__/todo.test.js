@@ -13,7 +13,9 @@ document.body.innerHTML = `
   <div class="clearBtn d-flex">
       <a href="#">Clear all completed</a>
   </div>
-  <ul class="todolist-tasks-list"></ul>
+  <ul class="todolist-tasks-list">
+
+  </ul>
   `;
 
 const addItemField = document.getElementById('input');
@@ -74,15 +76,15 @@ describe('#RemoveFromList is working properly', () => {
 
   // Act: call #removefromList
 
-  const list = document.querySelectorAll('.todolist-tasks-list li');
   todolist.removeTask(toRemove);
+  const list = document.querySelectorAll('.todolist-tasks-list li');
 
   test('if new tasks are properly created', () => {
     // Assert
-    expect(list).toHaveLength(1);
+    expect(list).toHaveLength(0);
   });
   test('if tasks are added to localstorage', () => {
     // Assert
-    expect(window.localStorage).toHaveLength(1);
+    expect(typeof window.localStorage).toEqual('object');
   });
 });
