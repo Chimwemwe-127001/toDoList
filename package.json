@@ -4,7 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "jest --coverage",
+    "test": "jest --coverage --watch",
     "start": "webpack serve --open",
     "server": "node server.js",
     "deploy": "gh-pages -d dist",
