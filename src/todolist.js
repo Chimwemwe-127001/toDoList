@@ -29,7 +29,7 @@ export default class List {
       }
       listElem += `
         </div>
-        <i class="material-icons move">more_vert</i>
+        <i class="material-icons move remove"  index="${task.index}"  id="${task.index}">delete_sweep</i>
       </li>`;
       domListSection.innerHTML += listElem;
     });
@@ -49,11 +49,7 @@ export default class List {
 
   removeTask(taskIndex) {
     if (taskIndex) {
-      this.list.forEach((listItem, index) => {
-        if (listItem.index === taskIndex) {
-          this.list.splice(index, 1);
-        }
-      });
+      this.list.splice(taskIndex, 1);
       this.updateDOM();
     }
   }
@@ -101,6 +97,15 @@ export default class List {
           document.querySelector(targetPtag).classList.add('strikethrough');
         }
         this.saveActivities();
+      });
+    });
+
+    const removeBtns = document.querySelectorAll('.remove');
+    removeBtns.forEach((removeBtn) => {
+      removeBtn.addEventListener('click', (e) => {
+        const toRemove = e.target.getAttribute('id');
+        this.removeTask(toRemove);
+        this.updateDOM();
       });
     });
   }
