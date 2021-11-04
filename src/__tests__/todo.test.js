@@ -20,36 +20,34 @@ document.body.innerHTML = `
 
 const addItemField = document.getElementById('input');
 
-function storageMock() {
-  const storage = {};
+// function storageMock() {
+//   const storage = {};
 
-  return {
-    setItem(key, value) {
-      storage[key] = value || '';
-    },
-    getItem(key) {
-      return key in storage ? storage[key] : null;
-    },
-    removeItem(key) {
-      delete storage[key];
-    },
-    get length() {
-      return Object.keys(storage).length;
-    },
-    key(i) {
-      const keys = Object.keys(storage);
-      return keys[i] || null;
-    },
-  };
-}
-
-window.localStorage = storageMock();
+//   return {
+//     setItem(key, value) {
+//       storage[key] = value || '';
+//     },
+//     getItem(key) {
+//       return key in storage ? storage[key] : null;
+//     },
+//     removeItem(key) {
+//       delete storage[key];
+//     },
+//     get length() {
+//       return Object.keys(storage).length;
+//     },
+//     key(i) {
+//       const keys = Object.keys(storage);
+//       return keys[i] || null;
+//     },
+//   };
+// }
 
 describe('#addToList is working properly', () => {
   // Arrange
   const todolist = new List();
-
-  // Act: call #addToList
+  window.localStorage = Storage.prototype;
+  // Act: call #addTask
 
   todolist.addTask(addItemField.value);
   const list = document.querySelectorAll('.todolist-tasks-list li');
@@ -60,31 +58,104 @@ describe('#addToList is working properly', () => {
   });
   test('if tasks are added to localstorage', () => {
     // Assert
-    expect(window.localStorage).toHaveLength(1);
+    expect(todolist.list).toHaveLength(1);
   });
-  test('if localstorage has Array of two objects', () => {
+  test('Check typeof output revieved', () => {
     // Assert
-    expect(typeof window.localStorage).toBe('object');
+    expect(typeof todolist.list).toBe('object');
+  });
+  test('if localstorage has Array of one object', () => {
+    // Assert
+    expect(todolist.list).toEqual([{ completed: false, description: 'New Task', index: 0 }]);
   });
 });
 
 describe('#RemoveFromList is working properly', () => {
   // Arrange
+  window.localStorage = Storage.prototype;
   const todolist = new List();
   const removeBtn = document.querySelector('.remove');
   const toRemove = removeBtn.getAttribute('id');
 
-  // Act: call #removefromList
+  // Act: call #removeTask
 
   todolist.removeTask(toRemove);
   const list = document.querySelectorAll('.todolist-tasks-list li');
 
-  test('if new tasks are properly created', () => {
+  test('Check list length', () => {
     // Assert
     expect(list).toHaveLength(0);
   });
-  test('if tasks are added to localstorage', () => {
+  test('Check typeof output recieved', () => {
     // Assert
-    expect(typeof window.localStorage).toEqual('object');
+    expect(typeof todolist.list).toEqual('object');
+  });
+  test('Check contained content in array', () => {
+    // Assert
+    expect(todolist.list).toEqual([]);
+  });
+});
+describe('#Editing the task description.', () => {
+  // Arrange
+  window.localStorage = Storage.prototype;
+  const todolist = new List();
+
+  // Act: #EditList
+  todolist.addTask(addItemField.value);
+  todolist.addTask(addItemField.value);
+
+  test('Check contained content in array', () => {
+    // Assert
+    expect(todolist.list[0].description).toMatch('New Task');
+  });
+
+  test('Check contained content in array', () => {
+    // Act: #EditList
+    todolist.edit(0, 'Other task');
+    todolist.list[0].description = 'Other task';
+
+    // Assert
+    expect(todolist.list[0].description).toMatch('Other task');
+  });
+
+  test('Check contained content in array', () => {
+    // Assert
+    expect(todolist.list).toHaveLength(2);
+  });
+});
+
+describe('#Updating item completed status.', () => {
+  // Arrange
+  window.localStorage = Storage.prototype;
+  const todolist = new List();
+
+  // Act: #UpdateListStatus
+  todolist.list[0].description = 'Hello World';
+  todolist.list[0].completed = true;
+
+  test('Check contained content in array', () => {
+    // Assert
+    expect(todolist.list).toEqual([{ completed: true, description: 'Hello World', index: 0 }, { completed: false, description: 'New Task', index: 1 }]);
+  });
+});
+
+describe('#Clear all completed.', () => {
+  // Arrange
+  window.localStorage = Storage.prototype;
+  const todolist = new List();
+
+  // Act: # clearAllCompleted
+  todolist.list[0].completed = true;
+  todolist.list[1].completed = true;
+  todolist.clearCompleted();
+
+  test('Check if content tasks completed are cleared', () => {
+    // Assert
+    expect(todolist.list).toHaveLength(0);
+  });
+
+  test('Check if content typeof() is object', () => {
+    // Assert
+    expect(typeof todolist.list).toEqual('object');
   });
 });

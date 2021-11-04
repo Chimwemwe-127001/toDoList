@@ -54,21 +54,10 @@ export default class List {
     }
   }
 
-  sort() {
-    this.list.sort((a, b) => {
-      const keyA = a.index;
-      const keyB = b.index;
-      if (keyA < keyB) return -1;
-      if (keyA > keyB) return 1;
-      return 0;
-    });
-  }
-
   saveActivities() {
     this.list.forEach((task, index) => {
       this.list[index].index = index;
     });
-    this.sort();
     localStorage.setItem('todo-list', JSON.stringify(this.list));
   }
 
@@ -81,6 +70,13 @@ export default class List {
     });
     this.list = newArr;
     this.updateDOM();
+  }
+
+  edit(index, description) {
+    if (index && description) {
+      this.list[index].description = description;
+      this.saveActivities();
+    }
   }
 
   attachInteractions() {
@@ -97,6 +93,18 @@ export default class List {
           document.querySelector(targetPtag).classList.add('strikethrough');
         }
         this.saveActivities();
+      });
+    });
+    document.querySelectorAll('.ptag').forEach((ptag) => {
+      ptag.addEventListener('input', (e) => {
+        const descriptionVal = e.target.innerText;
+        const index = ptag.getAttribute('index');
+        this.edit(index, descriptionVal);
+        // const savedData = JSON.parse(localStorage.getItem('todo-list'));
+        // if (savedData[index]) {
+        //   savedData[index].description = descriptionVal;
+        // }
+        // localStorage.setItem('todo-list', JSON.stringify(savedData));
       });
     });
 
