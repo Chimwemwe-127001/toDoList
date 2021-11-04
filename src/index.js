@@ -35,11 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
     todolist.addTask(newActivity);
     form.reset();
   });
-
-  document.querySelectorAll('.remove').forEach((removeBtn) => {
-    removeBtn.addEventListener('click', (e) => {
-      const toRemove = e.target.getAttribute('id');
-      todolist.removeTask(toRemove);
-    });
-  });
 });
