@@ -46,6 +46,11 @@ Additional description about the project and its features.
 - GitHub: [@Chimwemwe-127001](https://github.com/Chimwemwe-127001)
 - Twitter: [@chimwewme](https://twitter.com/chimwewme)
 
+👤 **Hamid Murambiwa**
+
+- GitHub: [@hamid-murambiwa](https://github.com/hamid-murambiwa)
+- Twitter: [@Hamid87789454](https://twitter.com/Hamid87789454)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
