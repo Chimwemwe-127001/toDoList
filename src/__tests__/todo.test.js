@@ -137,6 +137,10 @@ describe('#Updating item completed status.', () => {
     // Assert
     expect(todolist.list).toEqual([{ completed: true, description: 'Hello World', index: 0 }, { completed: false, description: 'New Task', index: 1 }]);
   });
+  test('Check contained content in array', () => {
+    // Assert
+    expect(todolist.list).toHaveLength(2);
+  });
 });
 
 describe('#Clear all completed.', () => {
