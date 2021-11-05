@@ -511,7 +511,7 @@ class List {
       }
       listElem += `
         </div>
-        <i class="material-icons remove" id="${task.index}">delete_sweep</i>
+        <i class="material-icons move remove"  index="${task.index}"  id="${task.index}">delete_sweep</i>
       </li>`;
       domListSection.innerHTML += listElem;
     });
@@ -531,30 +531,15 @@ class List {
 
   removeTask(taskIndex) {
     if (taskIndex) {
-      this.list.forEach((listItem, index) => {
-        if (listItem.index === taskIndex) {
-          this.list.splice(index, 1);
-        }
-      });
+      this.list.splice(taskIndex, 1);
       this.updateDOM();
     }
-  }
-
-  sort() {
-    this.list.sort((a, b) => {
-      const keyA = a.index;
-      const keyB = b.index;
-      if (keyA < keyB) return -1;
-      if (keyA > keyB) return 1;
-      return 0;
-    });
   }
 
   saveActivities() {
     this.list.forEach((task, index) => {
       this.list[index].index = index;
     });
-    this.sort();
     localStorage.setItem('todo-list', JSON.stringify(this.list));
   }
 
@@ -567,6 +552,13 @@ class List {
     });
     this.list = newArr;
     this.updateDOM();
+  }
+
+  edit(index, description) {
+    if (index && description) {
+      this.list[index].description = description;
+      this.saveActivities();
+    }
   }
 
   attachInteractions() {
@@ -585,9 +577,29 @@ class List {
         this.saveActivities();
       });
     });
+    document.querySelectorAll('.ptag').forEach((ptag) => {
+      ptag.addEventListener('input', (e) => {
+        const descriptionVal = e.target.innerText;
+        const index = ptag.getAttribute('index');
+        this.edit(index, descriptionVal);
+        // const savedData = JSON.parse(localStorage.getItem('todo-list'));
+        // if (savedData[index]) {
+        //   savedData[index].description = descriptionVal;
+        // }
+        // localStorage.setItem('todo-list', JSON.stringify(savedData));
+      });
+    });
+
+    const removeBtns = document.querySelectorAll('.remove');
+    removeBtns.forEach((removeBtn) => {
+      removeBtn.addEventListener('click', (e) => {
+        const toRemove = e.target.getAttribute('id');
+        this.removeTask(toRemove);
+        this.updateDOM();
+      });
+    });
   }
 }
-
 
 /***/ })
 /******/ 	]);
@@ -682,29 +694,9 @@ document.getElementById('clearAll').addEventListener('click', () => {
   todolist.updateDOM();
 });
 
-document.querySelectorAll('.ptag').forEach((ptag) => {
-  ptag.addEventListener('input', (e) => {
-    const descriptionVal = e.target.innerText;
-    const index = ptag.getAttribute('index');
-    const savedData = JSON.parse(localStorage.getItem('todo-list'));
-    if (savedData[index]) {
-      savedData[index].description = descriptionVal;
-    }
-    localStorage.setItem('todo-list', JSON.stringify(savedData));
-  });
-});
-
-document.querySelectorAll('.remove').forEach((removeBtn) => {
-  removeBtn.addEventListener('click', (e) => {
-    const toRemove = e.target.getAttribute('id');
-    todolist.removeTask(toRemove);
-  });
-});
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.querySelector('form');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
+  form.addEventListener('submit', () => {
     const newActivity = form.elements.new_task.value;
     todolist.addTask(newActivity);
     form.reset();
