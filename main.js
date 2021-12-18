@@ -680,6 +680,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+document.querySelector('tit');
 const todolist = new _todolist_js__WEBPACK_IMPORTED_MODULE_1__["default"]();
 
 todolist.updateDOM();
